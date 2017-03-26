@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -uo pipefail
+
+path=$1
+cp "${path}" "${path}.orig"
+
+~/Documents/binary_pattern_replace/binary_pattern_replace "${path}" "89 08 41 F6 C4 01 75 21" "89 08 41 F6 C4 00 74 21"
+~/Documents/binary_pattern_replace/binary_pattern_replace "${path}" "C7 00 02 00 00 00 41 F6 C7 01 0F 84 ?? 00 00 00" "C7 00 02 00 00 00 41 F6 C7 00 0F 85 ?? 00 00 00"
